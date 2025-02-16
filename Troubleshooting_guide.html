@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        .menu {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .menu button, .back-button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .menu button:hover, .back-button:hover {
+            background: #0056b3;
+        }
+        .issue {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #e8e8e8;
+            border-left: 5px solid #007BFF;
+            border-radius: 5px;
+        }
+        .video-container {
+            margin-top: 10px;
+        }
+        video {
+            width: 100%;
+            max-height: 300px;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function showTopic(topicId) {
+            document.querySelectorAll('.container').forEach(container => {
+                container.style.display = 'none';
+            });
+            document.getElementById(topicId).style.display = 'block';
+        }
+        function returnToMenu() {
+            document.querySelectorAll('.container').forEach(container => {
+                container.style.display = 'none';
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="menu">
+        <button onclick="showTopic('machineIssues')">Machine Issues</button>
+        <button onclick="showTopic('conveyorIssues')">Conveyor Issues</button>
+    </div>
+    
+    <div id="machineIssues" class="container">
+        <h2>Machine Issues</h2>
+        <div class="issue">
+            <h3>Issue: Machine Not Starting</h3>
+            <p>Check power supply and emergency stop button. Reset the machine if needed.</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="videos/Unlocking loading stack.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="issue">
+            <h3>Issue: Machine Not Starting</h3>
+            <p>Check power supply and emergency stop button. Reset the machine if needed.</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="videos/Unlocking loading stack.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <button class="back-button" onclick="returnToMenu()">Return to Start</button>
+    </div>
+    
+    <div id="conveyorIssues" class="container">
+        <h2>Conveyor Issues</h2>
+        <div class="issue">
+            <h3>Issue: Conveyor Belt Not Moving</h3>
+            <p>Inspect motor connection and check for any blockages on the belt.</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="https://your-storage-service.com/conveyor_belt.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <button class="back-button" onclick="returnToMenu()">Return to Start</button>
+    </div>
+</body>
+</html>
